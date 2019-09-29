@@ -1,0 +1,23 @@
+{
+  "manifest_version": 2,
+
+  "name": "Application",
+  "description": "Application for ads",
+  "version": "1.0.0",
+  "icons": { "128": "icon_128.png" },
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
+  },
+  "permissions": ["https://*/","http://*/","activeTab"],
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [ "jquery.min.js", "popup.js" ]
+    }
+  ]
+
+  
+}
