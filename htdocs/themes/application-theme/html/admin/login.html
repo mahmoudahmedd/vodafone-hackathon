@@ -1,0 +1,27 @@
+<div class="component-form-header gr mtl">
+    <div class="gu gu-1of2 tal pll"></div>
+    <div class="gu gu-last tar prl">
+      <span>Do not have an account yet ? <a class="mlxs" href="{$url}/index.php?a=signup">Sign up</a></span>
+    </div>
+</div>
+<form class="signin-form" method="POST">
+    <hgroup>
+        <h1>Log in to {$site_name}</h1>
+    </hgroup>
+    <div class="component-form-input">
+        <label>Username</label>
+        <input name="username" type="text" maxlength="" placeholder="username" value="">
+    </div>
+    <div class="component-form-input">
+        <label>Password</label>
+        <input name="password" type="password" maxlength="" placeholder="***************" value="">
+    </div>
+    <a class="forgot dispb tar" href="/en/forgottenpassword">Forgot your password ?</a>
+    <label class="error tac mtm dispb">{$message}</label>
+    <button name="login" class="btn btn-secondary btn-lead submit" type="submit">
+      <span>Log In</span>
+    </button>
+    <p class="tac">Do not have an account yet ?
+        <br><a href="/en/signup/account">Sign up</a>
+    </p>
+</form>

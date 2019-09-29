@@ -1,0 +1,23 @@
+<div class="component-form-header gr mtl">
+    <div class="gu gu-1of2 tal pll"></div>
+    <div class="gu gu-last tar prl">
+      <span><a class="mlxs" href="{$url}/index.php?a=login&logout=1">Logout</a></span>
+    </div>
+</div>
+<form class="signin-form" method="POST" enctype="multipart/form-data">
+    <hgroup>
+        <h1>Welcome {$username}!</h1>
+    </hgroup>
+    <div class="component-form-input">
+        <label>Url</label>
+        <input name="url" type="text" maxlength="" placeholder="url" value="">
+    </div>
+    <div class="component-form-input">
+        <label>File</label>
+        <input name="file" type="file">
+    </div>
+    <label class="error tac mtm dispb">{$message}</label>
+    <button name="upload" class="btn btn-secondary btn-lead submit" type="submit">
+      <span>Upload</span>
+    </button>
+</form>

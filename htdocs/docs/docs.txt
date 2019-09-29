@@ -1,0 +1,95 @@
+Create social network app with Representational State Transfer API
+
+Photo social media Database with REST API
+-----------------------------------------
+
+users   
+       
+u_id                  (int), Primary ID that preferably auto increments 
+username 	      (varchar(32)),  Username (Unique Index, Not null)
+email  		      (varchar(256)), Email address (Unique Index, Not null)
+full_name             (varchar(32)),  Full name of user
+password              (varchar(256)), Password of user
+profile_pic_path      (varchar(128)), Profile picture (Default 'picture.jpg')
+access_token  	      (varchar(256)), Access token for user (Unique Index, Not null)
+register_date  	      (DateTime), When did this user sign up?
+----------------------------------------
+photos  
+       
+p_id                  (int), Primary ID that preferably auto increments 
+u_id                  (int), ID of the user who owns this photo (references users(u_id))
+caption               (varchar(1024)),  Photo caption
+pic_path              (varchar(128)), Path to image on server (Unique Index, Not null)
+creation_date         (DateTime), When was this image created?
+----------------------------------------
+likes
+
+l_id                   (int), Primary ID that preferably auto increments 
+u_id                   (int), ID of the user performing the like (references users(u_id))
+p_id                   (int),  ID of the photo being liked (references photos(p_id))
+creation_date          (DateTime), When was this like created?
+
+
+-------------------------------------------------------------
+?a=user&b=read&access_token=827ccb0eea8a706c4c34a16891f84e7b
+?a=user&b=update&access_token=AD
+
+Examples of requests:
+
+For profile information of a user: 
+https://phpsound.com/demo/api.php?t=u&q=USERNAME 
+
+For a list of latest 20 tracks uploaded by a user: 
+https://phpsound.com/demo/api.php?t=t&q=USERNAME 
+
+
+An example of json decoding would be the following PHP code: 
+
+<?php
+header('Content-Type: text/plain; charset=utf-8;'); 
+$file = file_get_contents("https://phpsound.com/demo/api.php?t=t&q=USERNAME");
+print_r(json_decode($file));
+?>
+
+
+**Photo social media database with REST API**
+# REST API
+> Our API allows you to retrieve informations from our database
+## DARABASE SCHEMA
+
+A schema for a Photo social media application like Instagram.
+---
+users   
+       
+u_id(int), Primary ID that preferably auto increments 
+username 	            (varchar(32)),  Username (Unique Index, Not null)
+email  		            (varchar(256)), Email address (Unique Index, Not null)
+full_name             (varchar(32)),  Full name of user
+password              (varchar(256)), Password of user
+profile_pic_path      (varchar(128)), Profile picture (Default 'picture.jpg')
+access_token  	      (varchar(256)), Access token for user (Unique Index, Not null)
+register_date  	      (DateTime), When did this user sign up?
+
+photos  
+       
+p_id                  (int), Primary ID that preferably auto increments 
+u_id                  (int), ID of the user who owns this photo (references users(u_id))
+caption               (varchar(1024)),  Photo caption
+pic_path              (varchar(128)), Path to image on server (Unique Index, Not null)
+creation_date         (DateTime), When was this image created?
+
+likes
+
+l_id                   (int), Primary ID that preferably auto increments 
+u_id                   (int), ID of the user performing the like (references users(u_id))
+p_id                   (int),  ID of the photo being liked (references photos(p_id))
+creation_date          (DateTime), When was this like created?
+
+---
+
+## License
+
+[![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://badges.mit-license.org)
+
+- **[MIT license](http://opensource.org/licenses/mit-license.php)**
+- Copyright 2015 © <a href="http://fvcproductions.com" target="_blank">FVCproductions</a>.

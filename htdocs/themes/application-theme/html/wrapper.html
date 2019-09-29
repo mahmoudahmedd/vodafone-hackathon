@@ -1,0 +1,34 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="robots" content="follow,index">
+
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Crimson+Text:400,600,700|Oswald:300,400,700" rel="stylesheet" type="text/css">
+
+    <title>{$title}</title>
+
+    <link rel="stylesheet" href="{$url}/{$theme_path}/{$theme_name}/css/main.css">
+    <link rel="stylesheet" href="{$url}/{$theme_path}/{$theme_name}/css/signin.css">
+</head>
+<body class="responsive-layout public-view">
+    <section id="signin">
+        <div class="signin-container">
+            <aside class="hide-m">
+                <a class="hs-logo" href="/">
+                <img src="{$url}/{$theme_path}/{$theme_name}/images/logo.png" style="margin: 20px;width: 166px;height: 65px;" alt="{$site_name}">
+              </a>
+            </aside>
+            <main>
+                {$content}
+                <div class="component-form-footer">
+                    ©{$year} {$footer} -
+                    <a class="mlxs mrxs" href="/en/mentions-legales">Terms of use</a>-
+                    <a class="mlxs" href="https://faqviadeo.secure.force.com/?l=en&amp;source=signup">About us</a>
+                </div>
+            </main>
+        </div>
+    </section>
+</body>
+</html>
